@@ -1,17 +1,53 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Tourney:ital,wght@1,900&display=swap');
 
 
-.text-shadow {
-    text-shadow: 12px 12px 12px rgb(0, 0, 0 , 0.5);
-    text-transform: uppercase;
-}
-
 .flashes h4 {
     line-height: 8;
 }
-
-.brand-logo {
+/*   Navbar   */
+.nav-link {
+    color: #fafafa;
+}
+.logo {
     margin-left: 5px;
     font-family: 'Pacifico', cursive;
     letter-spacing: 3px;
+    text-shadow: 12px 12px 12px rgb(0, 0, 0 , 0.5);
+    text-transform: uppercase;
+    color: #fafafa;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .navbar-ligh{
+        display: none;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .navbar-ligh{
+        display: none;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .navbar-ligh{
+        display: none;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .navbar-mobile{
+        display: none;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .navbar-mobile{
+        display: none;
+    }
 }
