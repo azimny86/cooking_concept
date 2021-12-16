@@ -36,7 +36,7 @@
                   <li class="nav-item">
                     <a class="nav-link active text-white" aria-current="page" href="{{url_for('recipes')}}">Home</a>
                   </li>
-                  <!--{% if session.user %}-->
+                {% if session.user %}
                   <li class="nav-item">
                     <a class="nav-link " href="#">New Recipe</a>
                   </li>
@@ -44,16 +44,16 @@
                     <a class="nav-link" href="{{url_for('profile', username=session['user'])}}">Profile</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Log Out</a>
+                    <a class="nav-link" href="{{url_for('logout')}}">Log Out</a>
                   </li>
-                  <!--{% else %}-->
+                {% else %}
                   <li class="nav-item">
                     <a class="nav-link" href="{{url_for('login')}}">Log In</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="{{url_for('register')}}">Registration</a>
                   </li>
-                  <!--{% endif %}-->
+                {% endif %}
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Recipes
@@ -90,7 +90,7 @@
                     <li class="nav-item">
                       <a class="nav-link active" aria-current="page" href="{{url_for('recipes')}}">Home</a>
                     </li>
-                    <!--{% if session.user %}-->
+                  {% if session.user %}
                     <li class="nav-item">
                       <a class="nav-link" href="#">New Recipe</a>
                     </li>
@@ -98,16 +98,16 @@
                       <a class="nav-link" href="{{url_for('profile', username=session['user'])}}">Profile</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#">Log Out</a>
+                      <a class="nav-link" href="{{url_for('logout')}}">Log Out</a>
                     </li>
-                    <!--{% else %}-->
+                  {% else %}
                     <li class="nav-item">
                       <a class="nav-link" href="{{url_for('login')}}">Log In</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="{{url_for('register')}}">Registration</a>
                     </li>
-                    <!--{% endif %}-->
+                  {% endif %}
                     <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Dropdown
@@ -134,7 +134,7 @@
         {% if messages %}
           {% for message in messages %}
             <div class="row flashes">
-              <h3 class="text-shadow blue accent-3 lighten-3 white-text center-align">{{ message }}</h3>
+              <h3 class="text-shadow blue accent-3 lighten-3 white-text center-align text-uppercase">{{ message }}</h3>
             </div>
           {% endfor %}
         {% endif %}

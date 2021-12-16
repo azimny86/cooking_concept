@@ -2,7 +2,7 @@
 
 
 .flashes h3 {
-    line-height: 8;
+    line-height: 4;
 }
 /*   Navbar   */
 .nav-link {
@@ -10,6 +10,7 @@
 }
 .logo {
     margin-left: 5px;
+    font-size: 30px;
     font-family: 'Pacifico', cursive;
     letter-spacing: 3px;
     text-shadow: 12px 12px 12px rgb(0, 0, 0 , 0.5);
@@ -17,6 +18,11 @@
     color: #fafafa;
 }
 
+
+/*   Profile   */
+h3 {
+    letter-spacing: 2px;
+}
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     .navbar-ligh{
