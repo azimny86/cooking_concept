@@ -23,12 +23,34 @@
 h3 {
     letter-spacing: 2px;
 }
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-    .navbar-ligh{
-        display: none;
-    }
+
+/*  Recipe  */
+.recipies-text{
+    margin-top: 5%;
+    text-align: center;
+    font-weight: 900;
+    font-size: xx-large;
 }
+
+
+.photo-recipe {
+    margin-top: 2%;
+    height: 37vh;
+    width: 20vw;
+    object-fit: scale-down;
+}
+
+.card-title {
+    size: 66px;
+}
+.card {
+    float: left;
+    margin-left: 5px;
+    margin-top: 5%;
+    width: 16rem;
+    
+}
+
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {

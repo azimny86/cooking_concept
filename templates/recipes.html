@@ -1,6 +1,24 @@
 {% extends "base.html" %}
 {% block content %}
+    <h2 class="recipies-text">Recipies:</h2>
     {% for recipe in recipes %}
-        {{recipe.recipe_name}}
+        <div class="card-deck">
+            <div class="card">
+                <img class="card-img-top" src="{{recipe.recipe_img}}" alt="{{recipe.recipe_alt}}">
+                <div class="card-body">
+                    <h5 class="card-title">{{recipe.recipe_name}}</h5>
+                    <hr>
+                    <p class="card-text">
+                        Prep time: {{recipe.recipe_prep}} min <br>
+                        <hr>
+                        Cooking time: {{recipe.recipe_cook}} min <br>
+                        <hr>
+                        Serves: {{recipe.recipe_serves}} People <br>
+                    </p>
+                    <hr>
+                    <a href="#" class="text-uppercase ">See full recipe</a>
+                </div>
+            </div>
+        </div>
     {% endfor %}
 {% endblock %}
