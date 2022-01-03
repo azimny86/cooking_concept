@@ -38,7 +38,7 @@
                   </li>
                 {% if session.user %}
                   <li class="nav-item">
-                    <a class="nav-link " href="#">New Recipe</a>
+                    <a class="nav-link " href="{{url_for('add_recipe') }}">New Recipe</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="{{url_for('profile', username=session['user'])}}">Profile</a>
@@ -92,7 +92,7 @@
                     </li>
                   {% if session.user %}
                     <li class="nav-item">
-                      <a class="nav-link" href="#">New Recipe</a>
+                      <a class="nav-link" href="{{url_for('add_recipe') }}">New Recipe</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="{{url_for('profile', username=session['user'])}}">Profile</a>
