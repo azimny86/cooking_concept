@@ -70,6 +70,7 @@ def login():
 
     return render_template("login.html")
 
+
 @app.route("/profile", methods=["GET", "POST"])
 def profile():
     if "user" in session:
@@ -77,15 +78,33 @@ def profile():
 
     return redirect(url_for("login"))
 
+
 @app.route("/logout")
 def logout():
-    flash("The user has logged out")
-    session.clear()
+    # remove user from session cookie
+    flash("You have been logged out")
+    session.pop("user")
     return redirect(url_for("login"))
 
 
-@app.route("/add_recipe")
+@app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
+    if request.method == "POST":
+        recipes = {
+            "recipe_name": request.form.get("recipe_name"),
+            "category_name": request.form.get("category_name"),
+            "recipe_img": request.form.get("recipe_img"),
+            "recipe_prep": request.form.get("recipe_prep"),
+            "recipe_cook": request.form.get("recipe_cook"),
+            "recipe_serves": request.form.get("recipe_serves"),
+            "recipe_ingredients": request.form.get("recipe_ingredients"),
+            "recipe_method": request.form.get("recipe_method"),
+            "created_by": session["user"]
+        }
+        mongo.db.recipes.insert_one(recipes)
+        flash("Your recipe has been added successfully")
+        return redirect(url_for("recipes"))
+
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_recipe.html", categories=categories)
 
