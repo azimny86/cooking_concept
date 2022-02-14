@@ -33,7 +33,7 @@ h3 {
 }
 
 
-.photo-recipe {
+.photo-recipes {
     margin-top: 2%;
     height: 37vh;
     width: 20vw;
@@ -49,6 +49,24 @@ h3 {
     margin-top: 5%;
     width: 16rem;
     
+}
+.recipe-name {
+    margin-top:40px;
+}
+
+.card-recipe {
+    border: thick double #607d8b;
+    padding:20px;
+}
+
+.photo-recipe {
+    width: 35%;
+    object-fit: contain;
+    margin-left:28%;
+}
+
+.card-content {
+    margin-top:5vh;
 }
 /* Add_recipe */
 

@@ -27,14 +27,14 @@
            <!-- Navbar large screens -->
           <div class="navbar navbar-expand-lg  blue-grey">
             <div class="container-fluid">
-              <a class="navbar-brand text-white logo" href="{{url_for('recipes')}}">Concept-Cooking</a>
+              <a class="navbar-brand text-white logo" href="{{url_for('home')}}}">Concept-Cooking</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarScroll">
                 <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll text-white" style="--bs-scroll-height: 100px;">
                   <li class="nav-item">
-                    <a class="nav-link active text-white" aria-current="page" href="{{url_for('recipes')}}">Home</a>
+                    <a class="nav-link active text-white" aria-current="page" href="{{url_for('home')}}">Home</a>
                   </li>
                 {% if session.user %}
                   <li class="nav-item">

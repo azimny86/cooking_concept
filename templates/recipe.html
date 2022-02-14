@@ -1,0 +1,51 @@
+{% extends "base.html"%}
+{% block content %}
+
+        <div class="col s12 m7">
+                <h2 class="recipe-name">{{recipe.recipe_name}}:</h2>
+                <div class="card-recipe ">
+                        <div class="card-image">
+                                <img class="photo-recipe" src="{{recipe.recipe_img}}" alt="{{recipe.recipe_alt}}">
+                        </div>
+                        <div class="card-stacked">
+                                <div class="card-content">
+                                        <blockquote class="blue-grey-text">
+                                                <p>Prep time: {{recipe.recipe_prep}} min</p>
+                                                <p>Cooking time: {{recipe.recipe_cook}} min</p>
+                                                <p>Serves: {{recipe.recipe_serves}} People</p>
+                                        </blockquote>
+                                        <ul class="collapsible expandable ">
+                                                <li>
+                                                        <div class="collapsible-header"><i
+                                                                        class="far fa-list-alt"></i>Ingredients</div>
+                                                        <div class="collapsible-body">
+                                                                <span>
+                                                                        {% for ingredient in recipe.recipe_ingredients %}
+                                                                        <p>{{ingredient}}</p>
+                                                                        {% endfor %}
+                                                                </span>
+                                                        </div>
+                                                </li>
+                                                <li>
+                                                        <div class="collapsible-header"><i class="fas fa-list-ol"></i>Method
+                                                        </div>
+                                                        <div class="collapsible-body">
+                                                                <span>
+                                                                        {% for method in recipe.recipe_method %}
+                                                                        <p>{{method}}</p>
+                                                                        {% endfor %}
+                                                                </span>
+                                                        </div>
+                                                </li>
+                                        </ul>
+                                        {% if session.user %}
+                                                <div class="recipe-buttons">
+                                                        <a class="waves-effect waves-light btn-large" href="#"><i class="material-icons left"></i>Edit</a>
+                                                        <a class="waves-effect waves-light btn-large" href="#"><i class="material-icons right"></i>Delete</a>
+                                                </div>
+                                        {% endif %}
+                                </div>
+                        </div>
+                </div> 
+        </div>
+{% endblock %}

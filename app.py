@@ -15,6 +15,10 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 @app.route("/")
+def home():
+    return render_template("home.html" )
+
+
 @app.route("/recipes")
 def recipes():
     recipes = mongo.db.recipes.find()
@@ -107,6 +111,13 @@ def add_recipe():
 
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_recipe.html", categories=categories)
+
+
+@app.route("/recipe/<recipe_id>")
+def recipe(recipe_id):
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    return render_template("recipe.html" , recipe=recipe , page_title = "See Recipe")
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

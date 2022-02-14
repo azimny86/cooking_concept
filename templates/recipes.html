@@ -4,7 +4,7 @@
     {% for recipe in recipes %}
         <div class="card-deck">
             <div class="card">
-                <img class="card-img-top" src="{{recipe.recipe_img}}" alt="{{recipe.recipe_alt}}">
+                <img class="card-img-recipe" src="{{recipe.recipe_img}}" alt="{{recipe.recipe_alt}}">
                 <div class="card-body">
                     <h5 class="card-title">{{recipe.recipe_name}}</h5>
                     <hr>
@@ -17,7 +17,7 @@
 
                     </p>
                     <hr>
-                    <a href="#" class="text-uppercase ">See full recipe</a>
+                    <a href="{{url_for('recipe' , recipe_id=recipe._id)}}" class="text-uppercase ">See full recipe</a>
                     <hr>
                     <p><em>by: {{recipe.created_by}} </em></p>
                 </div>
