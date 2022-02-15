@@ -27,7 +27,7 @@
            <!-- Navbar large screens -->
           <div class="navbar navbar-expand-lg  blue-grey">
             <div class="container-fluid">
-              <a class="navbar-brand text-white logo" href="{{url_for('home')}}}">Concept-Cooking</a>
+              <a class="navbar-brand text-white logo" href="{{url_for('home')}}">Concept-Cooking</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -38,10 +38,13 @@
                   </li>
                 {% if session.user %}
                   <li class="nav-item">
-                    <a class="nav-link " href="{{url_for('add_recipe') }}">New Recipe</a>
+                    <a class="nav-link " href="{{url_for('add_recipe') }}">New Recipes</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="{{url_for('profile', username=session['user'])}}">Profile</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('recipes')}}">Recipes</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="{{url_for('logout')}}">Log Out</a>
@@ -76,7 +79,7 @@
 
           <div class="navbar navbar-light fixed-top blue-grey navbar-mobile">
             <div class="container-fluid">
-              <a class="navbar-brand logo text-white" href="{{url_for('recipes')}}">Concept-Cooking</a>
+              <a class="navbar-brand logo text-white" href="{{url_for('home')}}">Concept-Cooking</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -88,7 +91,7 @@
                 <div class="offcanvas-body">
                   <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                     <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="{{url_for('recipes')}}">Home</a>
+                      <a class="nav-link active" aria-current="page" href="{{url_for('home')}}">Home</a>
                     </li>
                   {% if session.user %}
                     <li class="nav-item">
@@ -96,6 +99,9 @@
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="{{url_for('profile', username=session['user'])}}">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link " href="{{url_for('add_recipe') }}">New Recipes</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="{{url_for('logout')}}">Log Out</a>

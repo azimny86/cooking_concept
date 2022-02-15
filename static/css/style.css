@@ -18,6 +18,11 @@
     color: #fafafa;
 }
 
+.home-photo {
+    margin-top: 50px;
+    object-fit: cover;
+}
+
 
 /*   Profile   */
 h3 {
