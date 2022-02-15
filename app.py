@@ -119,6 +119,20 @@ def recipe(recipe_id):
     return render_template("recipe.html" , recipe=recipe , page_title = "See Recipe")
 
 
+@app.route("/edit_recipe/<recipe_id>",methods=["GET", "POST"])
+def edit_recipe(recipe_id):
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    categories = mongo.db.categories.find()
+    ingrediants_list = [ingredient for ingredient in recipe['recipe_ingredients']]
+    method_list = [method for method in recipe['recipe_method']]
+
+    ingredient_text = "\n".join(ingrediants_list)
+    method_text = "\n".join(method_list)
+
+    return render_template("edit_recipe.html" , recipe= recipe , categories=categories , ingredient = ingredient_text ,
+                     method = method_list , page_title="Edit Recipe")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
