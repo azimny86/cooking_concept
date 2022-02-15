@@ -73,8 +73,25 @@ h3 {
 .card-content {
     margin-top:5vh;
 }
-/* Add_recipe */
+/* Registration */
 
+
+.photo-registration {
+    object-fit: cover;
+    width: 100%;
+    height: 25rem;
+}
+
+/*  Login   */
+.card-login{
+    border:thick double #607d8b;
+    margin-left:10% ;
+}
+.photo-login{
+    object-fit: cover;
+    width: 100%;
+    height: 25rem;
+}
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
     .navbar-ligh{
