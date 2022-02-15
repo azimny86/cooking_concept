@@ -119,19 +119,33 @@ def recipe(recipe_id):
     return render_template("recipe.html" , recipe=recipe , page_title = "See Recipe")
 
 
-@app.route("/edit_recipe/<recipe_id>",methods=["GET", "POST"])
+@app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
+    if request.method == "POST":
+        submit = {
+            "recipe_name": request.form.get("recipe_name"),
+            "category_name": request.form.get("category_name"),
+            "recipe_img": request.form.get("recipe_img"),
+            "recipe_prep": request.form.get("recipe_prep"),
+            "recipe_cook": request.form.get("recipe_cook"),
+            "recipe_serves": request.form.get("recipe_serves"),
+            "recipe_ingredients": request.form.get("recipe_ingredients"),
+            "recipe_method": request.form.get("recipe_method"),
+            "created_by": session["user"]
+        }
+        mongo.db.recipes.update_one({"_id": ObjectId(recipe_id)}, {"$set": submit})
+        flash("Your recipe has been edit successfully")
+
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    categories = mongo.db.categories.find()
-    ingrediants_list = [ingredient for ingredient in recipe['recipe_ingredients']]
-    method_list = [method for method in recipe['recipe_method']]
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template("edit_recipe.html", recipe=recipe, categories=categories)
 
-    ingredient_text = "\n".join(ingrediants_list)
-    method_text = "\n".join(method_list)
 
-    return render_template("edit_recipe.html" , recipe= recipe , categories=categories , ingredient = ingredient_text ,
-                     method = method_list , page_title="Edit Recipe")
-
+@app.route("/delete_recipe/<recipe_id>")
+def delete_recipe(recipe_id):
+    mongo.db.recipes.delete_one({"_id": ObjectId(recipe_id)})
+    flash("The recipe has been removed ")
+    return redirect(url_for("recipes"))
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
