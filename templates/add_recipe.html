@@ -14,15 +14,6 @@
                 
             </div>
             <div class="row">
-                    <div class="input-field col s2 my-5">
-                      <select id="category_name" name="category_name" class="validate" required>
-                        {% for category in categories %}
-                            <option value="{{category.category_name}}">{{category.category_name}}</option>
-                        {% endfor %}
-                      </select>
-                      <label for="category_name"><i class="fas fa-bars"></i>Choose your Meal Category </label>
-                    </div>
-            </div>
             <div class="input-field col-s6 my-3">
                 <input id="recipe_img" name="recipe_img" type="url" pattern="https://.*" class="validate" placeholder="You have a picture of your dish, please add">
                 <label for="recipe_img"><i class="fas fa-camera-retro"></i>Dish Photo</label>
