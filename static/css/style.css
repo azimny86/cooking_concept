@@ -21,6 +21,7 @@
 .home-photo {
     margin-top: 50px;
     object-fit: cover;
+    max-height: 25rem
 }
 
 
@@ -29,7 +30,10 @@ h3 {
     letter-spacing: 2px;
 }
 
-/*  Recipe  */
+/*  Recipes  */
+.recipes-search {
+    margin-top: 25px;
+}
 .recipies-text{
     margin-top: 5%;
     text-align: center;
@@ -45,15 +49,14 @@ h3 {
     object-fit: scale-down;
 }
 
-.card-title {
-    size: 66px;
-}
 .card {
     float: left;
     margin-left: 5px;
     margin-top: 5%;
     width: 16rem;
-    
+    max-height: 38rem;
+    min-height: 38rem;
+    border: thick double #607d8b;
 }
 .recipe-name {
     margin-top:40px;
@@ -64,14 +67,22 @@ h3 {
     padding:20px;
 }
 
-.photo-recipe {
-    width: 35%;
+.card-image {
+    max-width: 100%;
     object-fit: contain;
-    margin-left:28%;
 }
 
 .card-content {
     margin-top:5vh;
+}
+
+.card-footer{
+    background-color: #607d8b;
+    text-decoration: none;
+    text-align: center;
+}
+.card-footer:hover {
+    background-color: #000;
 }
 /* Registration */
 

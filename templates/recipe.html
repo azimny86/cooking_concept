@@ -4,7 +4,7 @@
 <div class="col s12 m7">
         <h2 class="recipe-name">{{recipe.recipe_name}}:</h2>
         <div class="card-recipe ">
-                <div class="card-image">
+                <div class="photo-recipe">
                         <img class="photo-recipe" src="{{recipe.recipe_img}}" alt="{{recipe.recipe_alt}}">
                 </div>
                 <div class="card-stacked">
@@ -13,6 +13,7 @@
                                         <p>Prep time: {{recipe.recipe_prep}} min</p>
                                         <p>Cooking time: {{recipe.recipe_cook}} min</p>
                                         <p>Serves: {{recipe.recipe_serves}} People</p>
+                                        <p>Created by: {{ recipe.created_by }}</p>
                                 </blockquote>
                                 <ul class="collapsible expandable ">
                                         <li>
