@@ -29,16 +29,15 @@
       <div class="card-header bg-transparent"><img class="card-image" src="{{recipe.recipe_img}}" alt="{{recipe.recipe_alt}}"></div>
       <div class="card-body">
         <h5 class="card-title">{{recipe.recipe_name}}</h5><hr>
-        <p class="card-text">
-          Prep time: {{recipe.recipe_prep}} min <br>
-            <hr>
-            Cooking time: {{recipe.recipe_cook}} min <br>
-            <hr>
-            Serves: {{recipe.recipe_serves}} People <br>
-        </p>
+          <div class="card-text">
+              Prep time: {{recipe.recipe_prep}} min <br>
+              <hr>
+              Cooking time: {{recipe.recipe_cook}} min <br>
+              <hr>
+              Serves: {{recipe.recipe_serves}} People <br>
+          </div>
       </div>
       <div class="card-footer"><a href="{{url_for('recipe' , recipe_id=recipe._id)}}" class="text-uppercase text-white card-footer">See full recipe</a></div>
-    </div>
     </div>
     {% endfor %}
 {% endblock %}

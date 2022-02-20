@@ -17,50 +17,50 @@
             <div class="input-field col-s6 my-3">
                 <input id="recipe_img" name="recipe_img" type="url" value="{{recipe.recipe_img}}" pattern="https://.*" class="validate" placeholder="You have a picture of your dish, please add">
                 <label for="recipe_img"><i class="fas fa-camera-retro"></i>Dish Photo</label>
+            </div>
+            <div class="row">
+                <div class="input-field col s6 my-2">
+                    <input placeholder="Time you need to prepare a meal in minutes" id="recipe_prep" name="recipe_prep" type="number" value="{{recipe.recipe_prep}}" min="0" class="validate" required>
+                    <label for="recipe_prep"><i class="fas fa-stopwatch"></i>Preparation time:</label>
+                </div>
+                <div class="input-field col s6 my-2">
+                    <input placeholder="Time you need to cook a meal in minutes" id="recipe_cook" name="recipe_cook" type="number" value="{{recipe.recipe_cook}}" min="0" class="validate">
+                    <label for="recipe_cook"><i class="fas fa-hourglass-half"></i>Cooking time:</label>
+                </div>
+                <div class="input-field col s6 my-2">
+                    <input placeholder="For how many people will this dish be ?" id="recipe_serves" name="recipe_serves" type="number" value="{{recipe.recipe_serves}}" min="0" class="validate" required>
+                    <label for="recipe_serves"><i class="fas fa-users"></i> Serves:</label>
                 </div>
             </div>
-        <div class="row">
-            <div class="input-field col s6 my-2">
-                <input placeholder="Time you need to prepare a meal in minutes" id="recipe_prep" name="recipe_prep" type="number" value="{{recipe.recipe_prep}}" min="0" class="validate" required>
-                <label for="recipe_prep"><i class="fas fa-stopwatch"></i>Preparation time:</label>
-            </div>
-            <div class="input-field col s6 my-2">
-                <input placeholder="Time you need to cook a meal in minutes" id="recipe_cook" name="recipe_cook" type="number" value="{{recipe.recipe_cook}}" min="0" class="validate">
-                <label for="recipe_cook"><i class="fas fa-hourglass-half"></i>Cooking time:</label>
-            </div>
-            <div class="input-field col s6 my-2">
-                <input placeholder="For how many people will this dish be ?" id="recipe_serves" name="recipe_serves" type="number" value="{{recipe.recipe_serves}}" min="0" class="validate" required>
-                <label for="recipe_serves"><i class="fas fa-users"></i> Serves:</label>
-            </div>
 
-        <div class="row">
-            <div class="input-field col s12 my-2">
-            <textarea id="recipe_ingredients" name="recipe_ingredients" rows="6" maxlength="3500" class="materialize-textarea" placeholder="Please separate each ingredient on a new line by hitting the enter key after each ingredient" required>
-                {% for ingredient in recipe.recipe_ingredients %}
-                  {{-ingredient-}}
-                {% endfor %}
-            </textarea>
-            <label for="recipe_ingredients"><i class="fas fa-list-alt"></i>Recipe Ingredients</label>
+            <div class="row">
+                <div class="input-field col s12 my-2">
+                <textarea id="recipe_ingredients" name="recipe_ingredients" rows="6" maxlength="3500" class="materialize-textarea" placeholder="Please separate each ingredient on a new line by hitting the enter key after each ingredient" required>
+                    {% for ingredient in recipe.recipe_ingredients %}
+                    {{-ingredient-}}
+                    {% endfor %}
+                    </textarea>
+                    <label for="recipe_ingredients"><i class="fas fa-list-alt"></i>Recipe Ingredients</label>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-            <textarea id="recipe_method" name="recipe_method" class="materialize-textarea" placeholder="Please separate each ingredient on a new line by hitting the enter key after each step" required>
-                {% for method in recipe.recipe_method %}
-                  {{-method-}}
-                {% endfor %}
-            </textarea>
-            <label for="recipe_method"><i class="fas fa-ellipsis-v"></i>Recipe Method</label>
+            <div class="row">
+                <div class="input-field col s12">
+                <textarea id="recipe_method" name="recipe_method" class="materialize-textarea" placeholder="Please separate each ingredient on a new line by hitting the enter key after each step" required>
+                    {% for method in recipe.recipe_method %}
+                    {{-method-}}
+                    {% endfor %}
+                </textarea>
+                <label for="recipe_method"><i class="fas fa-ellipsis-v"></i>Recipe Method</label>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col 12 center-align">
-                <button class="btn waves-effect blue-grey waves-light col-4 mx-5 text-white" type="submit">Submit
-                    <i class="fas fa-long-arrow-alt-right"></i>
-                </button>
-                <a href="{{url_for('recipes')}}" class="btn btn-success orange lighten-1 col-4 mx-5">Cancel <i class="far fa-times-circle"></i></a>
+            <div class="row">
+                <div class="col 12 center-align">
+                    <button class="btn waves-effect blue-grey waves-light col-4 mx-5 text-white" type="submit">Submit
+                        <i class="fas fa-long-arrow-alt-right"></i>
+                    </button>
+                    <a href="{{url_for('recipes')}}" class="btn btn-success orange lighten-1 col-4 mx-5">Cancel <i class="far fa-times-circle"></i></a>
+                </div>
             </div>
-        </div>
         </form>
     </div>
 {% endblock %}
