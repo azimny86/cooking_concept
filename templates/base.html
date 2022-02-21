@@ -18,9 +18,8 @@
 
  {% endblock %}
 
- <title>MS-3</title>
 </head>
-
+<title>MS-3</title>
 <body>
     <header>
         <nav>
@@ -38,23 +37,23 @@
                   </li>
                 {% if session.user %}
                   <li class="nav-item">
-                    <a class="nav-link " href="{{url_for('add_recipe') }}">New Recipes</a>
+                    <a class="nav-link text-white" href="{{url_for('add_recipe') }}">New Recipes</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{{url_for('profile', username=session['user'])}}">Profile</a>
+                    <a class="nav-link text-white" href="{{url_for('profile', username=session['user'])}}">Profile</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{{url_for('recipes')}}">Recipes</a>
+                    <a class="nav-link text-white" href="{{url_for('recipes')}}">Recipes</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{{url_for('logout')}}">Log Out</a>
+                    <a class="nav-link text-white" href="{{url_for('logout')}}">Log Out</a>
                   </li>
                 {% else %}
                   <li class="nav-item">
-                    <a class="nav-link" href="{{url_for('login')}}">Log In</a>
+                    <a class="nav-link text-white" href="{{url_for('login')}}">Log In</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{{url_for('register')}}">Registration</a>
+                    <a class="nav-link text-white" href="{{url_for('register')}}">Registration</a>
                   </li>
                 {% endif %}
                 </ul>
@@ -63,11 +62,11 @@
           </div>
 
           <!-- Mobile navbar -->
-          <div class="navbar navbar-light fixed-top blue-grey navbar-mobile">
+          <div class="navbar navbar-light fixed-top blue-grey navbar-mobile ">
             <div class="container-fluid">
               <a class="navbar-brand logo text-white" href="{{url_for('home')}}">Concept-Cooking</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon "></span>
               </button>
               <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header">
